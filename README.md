@@ -1,7 +1,7 @@
 # CodingInterview
 ### 1. Process VS Thread
 #### * Process  
-      1. d  
+   1. d  
 2. 
    
 #### * Thread
