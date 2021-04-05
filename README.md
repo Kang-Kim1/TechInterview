@@ -1,6 +1,6 @@
 # CodingInterview
 ### 1. Process VS Thread
-#### * Process
+* Process
    - 
 ## * Thread
  * Pros & Cons
