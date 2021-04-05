@@ -1,4 +1,4 @@
-# CodingInterview
+# Technical Interview
 ### 1. Process VS Thread
 * Process  
   1. 실행되고 있는 프로그램의 인스턴스 (== OS로부터 시스템 자원을 할당받은 단위)
