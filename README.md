@@ -1,6 +1,8 @@
 # CodingInterview
 ### 1. Process VS Thread
- * Definition
+## * Process
+   - 
+ * Thread
  * Pros & Cons
  * Multi-Processing 
  * Multi-Threading
