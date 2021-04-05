@@ -9,7 +9,7 @@
 3. 각 프로세스는 별도의 주소공간에서 실행되며, 다른 프로세스 접근 시 파이프라인, 소켓 등 활용
 4. 기본적으로 최소 1개 스레드(main thread) 포함 
    
-#### * Thread
+### - Thread
  * Pros & Cons
  * Multi-Processing 
  * Multi-Threading
