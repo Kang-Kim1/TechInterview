@@ -1,6 +1,6 @@
 # Technical Interview
 ### 1. Process
-<img src = "https://user-images.githubusercontent.com/20007119/113556392-5cd89e80-9637-11eb-8142-f57a5c29d7b4.png" width="100px">
+<img src = "https://user-images.githubusercontent.com/20007119/113556392-5cd89e80-9637-11eb-8142-f57a5c29d7b4.png" width="300px">
 
 1. 실행되고 있는 프로그램의 인스턴스 (== OS로부터 시스템 자원을 할당받은 단위)
 2. Code, Data, Stack, Heap 를 포함하고 있는 독립된 영역
