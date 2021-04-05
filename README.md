@@ -12,9 +12,11 @@
 4. 기본적으로 최소 1개 스레드(main thread) 포함 
 5. Multi-Processing
     * 장점
-      - 1.   ㅇㅇ
-       
+      1. 문제 발생 시, 자식 프로세스 제거 > 추가적인 악영향 최소화
     * 단점
+      1. Context Switching(프로세스간 교대 시, 마지막 상태를 복구하는 작업)에 많은 리소스 소요
+      2. 독립된 메모리 영역을 사용하고 있어, 프로세스간 데이터 공유 어려움
+      3. 
    
 ### 2. Thread
 <img src = "https://user-images.githubusercontent.com/20007119/113556874-1172c000-9638-11eb-912a-f164a97ae2a0.png" width="400px">
