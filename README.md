@@ -2,7 +2,7 @@
 ### 1. Process VS Thread
 ## * Process
    - 
- * Thread
+## * Thread
  * Pros & Cons
  * Multi-Processing 
  * Multi-Threading
