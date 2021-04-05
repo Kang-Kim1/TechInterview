@@ -1,15 +1,15 @@
 # CodingInterview
-1 Process VS Thread
+###1. Process VS Thread
  * Definition
  * Pros & Cons
  * Multi-Processing 
  * Multi-Threading
 
-2 Java
+2. Java
  * Galbage Collector
  * Mutable & Immutable
  
-3 DB
+3. DB
  * View
  * Stored Procedure
  
