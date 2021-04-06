@@ -42,8 +42,8 @@
       - 
 3. GC 종류 
 
-1. Mutable & Immutable
-3. DB
- * View
- * Stored Procedure
+### 1. Mutable & Immutable
+### 3. DB
+1. View
+2. Stored Procedure
  
