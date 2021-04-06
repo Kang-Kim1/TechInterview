@@ -40,7 +40,7 @@
       - Card Table : 해당 영역에서 Young 영역 객체를 참조하는 객체 정보를 저장함 (512Byte Chunk)
       - 해당 영역 GC : Major GC & Full GC
       - 
-3. GC 종류
+3. GC 종류 
 
 1. Mutable & Immutable
 3. DB
