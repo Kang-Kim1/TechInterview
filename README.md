@@ -27,14 +27,20 @@
 ### 3. Galbage Collector
 1. JVM에서 불필요한 메모리를 정리
 2. Heap 영역은 '대부분의 객체가 일회성'이며 '오래 지속되는 경우가 드물다'는 전제로 아래와 같이 영역을 분리
-    * Young Generation
+    * Young Generation 
       - 새롭게 생긴 객체가 할당되는 영역
+      - Eden, 2개의 Survier 영역으로 나뉨
+        * new로 객체 할당 > Eden 영역에 위치 > GC발생 > 살아남은 객체 Survier로 이동 
+      - 해당 영역 GC : Minor GC 
       - 대부분의 객체가 해당 영역에서 접근 불가한 상태로 변경
-      - 해당 영역의 대한 GC : Minor GC 
     * Old Generation
-      - Young 영역에서 Reachable 상태를 유지한 객체가 복사 이동되는 영역
-      - 복사되는 과정에서 Y.G 대비 큰 영역이 할당됨
-
+      - Young 영역에서 Reachable 상태를 유지한 객체가 복사 이동되는 영역 == Y.G. Survivor 영역 가득 찬 시점에 남은 객체
+      - Young 대비 큰 영역 할당, GC 덜 발생
+      - 기본적으로 Data가 가득 찼을떄  GC 수행
+      - Card Table : 해당 영역에서 Young 영역 객체를 참조하는 객체 정보를 저장함 (512Byte Chunk)
+      - 해당 영역 GC : Major GC & Full GC
+      - 
+3. GC 
 
 1. Mutable & Immutable
 3. DB
