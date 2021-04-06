@@ -22,13 +22,21 @@
 <img src = "https://user-images.githubusercontent.com/20007119/113556874-1172c000-9638-11eb-912a-f164a97ae2a0.png" width="400px">
 1. 프로세스 내에서 실행되는 여러 동작의 단위 == 프로세스의 특정 수행 경로
 2. 프로세스로부터 Stack 영역만 따로 할당 받고, 나머지 3개 영역(Code, Data, Heap)은 공유
- * Multi-Processing 
- * Multi-Threading
+3. Multi-Threading
 
-2. Java
- * Galbage Collector
- * Mutable & Immutable
- 
+### 3. Galbage Collector
+1. JVM에서 불필요한 메모리를 정리
+2. Heap 영역은 '대부분의 객체가 일회성'이며 '오래 지속되는 경우가 드물다'는 전제로 아래와 같이 영역을 분리
+    * Young Generation
+      - 새롭게 생긴 객체가 할당되는 영역
+      - 대부분의 객체가 해당 영역에서 접근 불가한 상태로 변경
+      - 해당 영역의 대한 GC : Minor GC 
+    * Old Generation
+      - Young 영역에서 Reachable 상태를 유지한 객체가 복사 이동되는 영역
+      - 복사되는 과정에서 Y.G 대비 큰 영역이 할당됨
+
+
+1. Mutable & Immutable
 3. DB
  * View
  * Stored Procedure
