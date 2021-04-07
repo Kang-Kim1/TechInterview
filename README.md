@@ -42,10 +42,12 @@
       
 3. GC 방식
     1. Serial GC
-    2. Parallel GC
-    3. Parallel Old GC
-    4. CMS GC 
-    5. G1 GC
+      mark-sweep-compact 알고리즘을 사용하여 아래와 같이 Garbage 식별
+        Old 영역에서 살아있는 객체 식별(mark) > Heap 앞 영역을 확인하며 살아있는 객체 남김(sweep) > 
+    3. Parallel GC
+    4. Parallel Old GC
+    5. CMS GC 
+    6. G1 GC
 
 ### 1. Mutable & Immutable
 ### 3. DB
