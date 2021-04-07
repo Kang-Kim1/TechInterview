@@ -30,7 +30,7 @@
     * Young Generation 
       - 새롭게 생긴 객체가 할당되는 영역
       - Eden, 2개의 Survier 영역으로 나뉨
-        * new로 객체 할당 > Eden 영역에 위치 > GC발생 > 살아남은 객체 Survier로 이동 
+        * new로 객체 할당 > Eden 영역에 위치 > GC발생 > 살아남은 객체 Survivor로 이동 
       - 해당 영역 GC : Minor GC 
       - 대부분의 객체가 해당 영역에서 접근 불가한 상태로 변경
     * Old Generation
@@ -39,8 +39,13 @@
       - 기본적으로 Data가 가득 찼을떄  GC 수행
       - Card Table : 해당 영역에서 Young 영역 객체를 참조하는 객체 정보를 저장함 (512Byte Chunk)
       - 해당 영역 GC : Major GC & Full GC
-      - 
-3. GC 종류 
+      
+3. GC 방식
+    1. Serial GC
+    2. Parallel GC
+    3. Parallel Old GC
+    4. CMS GC 
+    5. G1 GC
 
 ### 1. Mutable & Immutable
 ### 3. DB
