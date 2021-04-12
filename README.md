@@ -42,14 +42,26 @@
       
 3. GC 방식
     1. Serial GC
-      mark-sweep-compact 알고리즘을 사용하여 아래와 같이 Garbage 식별
-        Old 영역에서 살아있는 객체 식별(mark) > Heap 앞 영역을 확인하며 살아있는 객체 남김(sweep) > 
-    3. Parallel GC
-    4. Parallel Old GC
-    5. CMS GC 
-    6. G1 GC
+      * Old영역으로 넘어간 객체를 mark-sweep-compact 알고리즘을 사용하여 아래와 같이 Garbage 식별
+        > 살아있는 객체 식별(mark) > 살아있는 객체 남김를 제외한 Garbage 삭제 > 남은 객체는 Heap의 앞부분부터 정렬되도록 정리
+    3. Parallel GC (Throughput GC)
+      * Serial GC와 동일하나 다중 스레드로 수행. 메모리가 충분하고, 코어 개수가 많을수록 유리
+    5. Parallel Old GC
+    6. CMS GC 
+    7. G1 GC
 
-### 1. Mutable & Immutable
+### 4. Mutable & Immutable
+1. Immutable : 클레스의 인스턴스가 생성된 후, 내용이 바뀌지 않는 특징을 갖는 클래스 
+    * int, double 등의 primitive 타입, String 등
+    * 실제 값에 대한 불변이 아닌 값에 할당되는 주소값에 대한 불변 여부
+2. Mutable : String을 제외한 참조타입(배열 등)
+
+### 5. 자바 참조타입
+1. 기본 타입
+2. 참조 타입
+3. 
+
+
 ### 3. DB
 1. View
 2. Stored Procedure
