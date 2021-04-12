@@ -42,10 +42,10 @@
       
 3. GC 방식
     1. Serial GC
-      * Old영역으로 넘어간 객체를 mark-sweep-compact 알고리즘을 사용하여 아래와 같이 Garbage 식별
-        > 살아있는 객체 식별(mark) > 살아있는 객체 남김를 제외한 Garbage 삭제 > 남은 객체는 Heap의 앞부분부터 정렬되도록 정리
+       * Old영역으로 넘어간 객체를 mark-sweep-compact 알고리즘을 사용하여 아래와 같이 Garbage 식별
+         > 살아있는 객체 식별(mark) > 살아있는 객체 남김를 제외한 Garbage 삭제 > 남은 객체는 Heap의 앞부분부터 정렬되도록 정리
     3. Parallel GC (Throughput GC)
-      * Serial GC와 동일하나 다중 스레드로 수행. 메모리가 충분하고, 코어 개수가 많을수록 유리
+       * Serial GC와 동일하나 다중 스레드로 수행. 메모리가 충분하고, 코어 개수가 많을수록 유리
     5. Parallel Old GC
     6. CMS GC 
     7. G1 GC
