@@ -64,8 +64,14 @@
        * Haeap를 블록단위(region)로 나눔 :  
          <img src="https://user-images.githubusercontent.com/20007119/114541572-de60aa00-9c91-11eb-966c-358d9850a2e5.png" width="400px">
        * 2048 개 Region으로 나뉘어질 수 있음 (각 Region의 크기 : 1 ~ 32MB)
-       *  
-    10. 
+       * 진행 순서 : 
+         1. Initial Mark : Old Region에 존재하는 객체들이 참조하는 Survivor Region을 Mark(Stop-The-World 발생)
+         2. Root Region Scan : Initial Mark를 통해 찾은 Survivor Region에 대한 GC 대상을 스캔
+         3. Concurrent Mark : 전체 힙 Region을 스캔, GC 대상이 스캔되지 않는 Region은 제외
+         4. Remark :최종 GC 대상을 Remark 한다(Stop-The-World 발생)
+         5. CleanUp : 살아남은 객체가 가장 적은 Region에 대한 GC를 수행(Stop-The-World 발생)
+         6. 'stop-the-world' 종료 시 완전히 비워진 Region을 FreeList에 추가하여 재사용하기 위해 준비
+         7. Copy : GC가 발생한 Region이지만 CleanUp 과정에서 완전히 비워지지 않은 Region들을 새 Region으로 복사 하여 Compaction 작업을 수행 
 
 ### 4. Mutable & Immutable
 1. Immutable : 클레스의 인스턴스가 생성된 후, 내용이 바뀌지 않는 특징을 갖는 클래스 
