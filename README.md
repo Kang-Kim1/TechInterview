@@ -26,7 +26,8 @@
 
 ### 3. Galbage Collector
 1. JVM에서 불필요한 메모리를 정리
-2. Heap 영역은 '대부분의 객체가 일회성'이며 '오래 지속되는 경우가 드물다'는 전제로 아래와 같이 영역을 분리
+2. GC 실행 시, 모든 스레드는 정지되며 GC 스레드만 동작하게 됨(Stop-The-World)
+3. Heap 영역은 '대부분의 객체가 일회성'이며 '오래 지속되는 경우가 드물다'는 전제로 아래와 같이 영역을 분리
     * Young Generation 
       - 새롭게 생긴 객체가 할당되는 영역
       - Eden, 2개의 Survier 영역으로 나뉨
@@ -43,12 +44,23 @@
 3. GC 방식
     1. Serial GC
        * Old영역으로 넘어간 객체를 mark-sweep-compact 알고리즘을 사용하여 아래와 같이 Garbage 식별
-         > 살아있는 객체 식별(mark) > 살아있는 객체 남김를 제외한 Garbage 삭제 > 남은 객체는 Heap의 앞부분부터 정렬되도록 정리
-    3. Parallel GC (Throughput GC)
+       * 진행 순서 : 
+         1. 살아있는 객체 식별(mark)
+         2. 살아있는 객체 남김를 제외한 Garbage 삭제(sweep) 
+         3. 남은 객체는 Heap의 앞부분부터 정렬되도록 정리(compact)
+    2. Parallel GC (Throughput GC)
        * Serial GC와 동일하나 다중 스레드로 수행. 메모리가 충분하고, 코어 개수가 많을수록 유리
-    5. Parallel Old GC
-    6. CMS GC 
-    7. G1 GC
+    3. Parallel Old GC
+       * Young 영역은 Parallel과 동일하지만 Old 영역에서 Sweep 과정 대신 살아있는 객체를 식별
+    7. CMS(Concurrent Mark Sweep) GC 
+       * Stop-The-World 시간을 크게 줄일 수 있으나, 메모리와 CPU를 많이 사용함
+       * Compaction 단계가 없음 (Stop-The-World 짧음)
+       * 진행 순서 : 
+         1. I nitial Mark : 클래스로더와 가장 가까운 객체 중 살아있는 객체 확인(Stop-The-World 발생) 
+         2. Concurrent Mark : I.M에서 확인된 객체들이 참조하고 있는 객체를 찾아가며 살아있는 객체 확인
+         3. Remark : C.M 단계를 진행하는 도중 새로 참조되거나 끊긴 객채를 재확인(Stop-The-World 발생)
+         4. Concurrent Sweep : 참조되지 않은 객체 삭제
+    8. G1 GC
 
 ### 4. Mutable & Immutable
 1. Immutable : 클레스의 인스턴스가 생성된 후, 내용이 바뀌지 않는 특징을 갖는 클래스 
