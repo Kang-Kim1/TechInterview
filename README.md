@@ -62,6 +62,7 @@
          4. Concurrent Sweep : 참조되지 않은 객체 삭제
     8. G1(Garbage First) GC
        * Haeap를 블록단위(region)로 나눔 :
+         <img src="https://user-images.githubusercontent.com/20007119/114541572-de60aa00-9c91-11eb-966c-358d9850a2e5.png" width="400px">
        * Young, 
     10. 
 
