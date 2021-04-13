@@ -61,9 +61,10 @@
          3. Remark : C.M 단계를 진행하는 도중 새로 참조되거나 끊긴 객채를 재확인(Stop-The-World 발생)
          4. Concurrent Sweep : 참조되지 않은 객체 삭제
     8. G1(Garbage First) GC
-       * Haeap를 블록단위(region)로 나눔 :
+       * Haeap를 블록단위(region)로 나눔 :  
          <img src="https://user-images.githubusercontent.com/20007119/114541572-de60aa00-9c91-11eb-966c-358d9850a2e5.png" width="400px">
-       * Young, 
+       * 2048 개 Region으로 나뉘어질 수 있음 (각 Region의 크기 : 1 ~ 32MB)
+       *  
     10. 
 
 ### 4. Mutable & Immutable
