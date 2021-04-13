@@ -60,7 +60,10 @@
          2. Concurrent Mark : I.M에서 확인된 객체들이 참조하고 있는 객체를 찾아가며 살아있는 객체 확인
          3. Remark : C.M 단계를 진행하는 도중 새로 참조되거나 끊긴 객채를 재확인(Stop-The-World 발생)
          4. Concurrent Sweep : 참조되지 않은 객체 삭제
-    8. G1 GC
+    8. G1(Garbage First) GC
+       * Haeap를 블록단위(region)로 나눔 :
+       * Young, 
+    10. 
 
 ### 4. Mutable & Immutable
 1. Immutable : 클레스의 인스턴스가 생성된 후, 내용이 바뀌지 않는 특징을 갖는 클래스 
